@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+hello
+<!--遍历集合-->
+<span th:text="${user}"></span>
+
+<hr>
+<table>
+    <tr>
+        <td>id</td>
+        <td>用户名</td>
+        <td>密码</td>
+    </tr>
+    <tr th:each="u : ${list}">
+        <td th:text="${u.id}"></td>
+        <td th:text="${u.username}"></td>
+        <td th:text="${u.password}"> </td>
+    </tr>
+</table>
+<hr>
+<!--日期格式化-->
+当前时间:<span th:text="${#dates.format(now,'yyyy-MM-dd HH:mm:ss')}"></span>
+<hr>
+<span th:text="${age > 18 ? '成年了':'未成年'}"></span>
+</body>
+</html>
